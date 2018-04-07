@@ -1,3 +1,25 @@
-<p>
-  sign-up works!
-</p>
+<mat-card>
+  <mat-card-title>Sign Up</mat-card-title>
+  <mat-card-subtitle>You need to create an account to save your passwords.</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <form class="material-forms">
+      <mat-form-field>
+        <input aria-describedby="emailHelp" matInput id="userId" placeholder="Enter Email" type="email" value="jhonDoe@example.com">
+        <mat-hint align="start">
+          <strong>Email will be kept private</strong>
+        </mat-hint>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="password" matInput id="password" placeholder="Password" type="password">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput id="password1" type="password" placeholder="Confirm New Password">
+      </mat-form-field>
+      <div class="mat-form-checkbox">
+        <mat-checkbox color="primary">Check Me</mat-checkbox>
+      </div>
+      <button mat-raised-button color="primary" (click)="signUp()">Sign Up</button>
+    </form>
+  </mat-card-content>
+</mat-card>

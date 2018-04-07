@@ -1,7 +1,14 @@
-<p>
-  dashboard works!
-</p>
-
+<mat-toolbar color="primary">
+  <span>Welcome Syed</span>
+</mat-toolbar>
+<mat-toolbar>
+  <div class="text-right">
+      <button mat-button color="primary" (click)="showAdd()"><i class="material-icons"><i class="material-icons">home</i></i> Home</button>
+      <button mat-button color="primary" (click)="showManage()"><i class="material-icons">settings_applications</i> Manage</button>
+      <button mat-button color="primary" (click)="showView()"><i class="material-icons">description</i> View</button>
+  </div>
+</mat-toolbar>
+<!-- 
 <div>
   <div>
     <p>UserName</p>
@@ -12,4 +19,12 @@
   <div>
     <p>Email</p>
   </div>
-</div>
+</div> -->
+<!-- <p>TOKEN:</p>
+<p>HOME||MANAGE||VIEW</p>
+<p>
+  <button (click)="showAdd()">Add</button>
+  <button (click)="showManage()">Manage</button>
+  <button (click)="showView()">View</button>
+</p> -->
+<router-outlet></router-outlet>

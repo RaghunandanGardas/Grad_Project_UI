@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-card-title>View</mat-card-title>
+  <mat-card-subtitle>View added passwords</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <form action="" class="material-forms">
+      <mat-form-field>
+        <mat-select id="fieldIdD" placeholder="Title" (change)="changeFieldD($event.value)">
+          <mat-option *ngFor="let t of userFields" [value]=t.fieldId>
+            {{t.fieldId}}
+          </mat-option>
+        </mat-select>
+        <mat-hint>Choose which password to view</mat-hint>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="bindData()">
+        <i class="material-icons">search</i> View</button>
+      <mat-form-field>
+        <input id="FieldName" matInput type="text" placeholder="FieldName" value="" disabled>
+      </mat-form-field>
+      <mat-form-field>
+        <input id="FieldId" matInput type="text" placeholder="FieldId" value="" disabled>
+      </mat-form-field>
+      <mat-form-field>
+        <input id="FieldPassword" matInput type="text" placeholder="FieldPassword" value="" disabled>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>

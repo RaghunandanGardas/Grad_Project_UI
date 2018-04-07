@@ -1,0 +1,73 @@
+<mat-card>
+  <mat-card-title>Manage</mat-card-title>
+  <mat-card-subtitle>Add, edit or delete new passwords</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-tab-group class="demo-tab-group" (selectedTabChange)="tabChanged()">
+      <mat-tab label="Add Password">
+        <div class="demo-tab-content">
+          <form action="" class="material-forms">
+            <mat-form-field>
+              <input matInput type="text" placeholder="Title" id="fieldName">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="email" placeholder="Email" id="fieldId">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="password" placeholder="Password" id="passwordDecrypted">
+            </mat-form-field>
+            <button mat-raised-button color="primary" (click)="addField()">
+              <i class="material-icons">add</i> Add</button>
+          </form>
+        </div>
+      </mat-tab>
+      <mat-tab label="Modify Password">
+        <div class="demo-tab-content" *ngIf="fieldsExist; else noFieldsExist">
+          <form action="" class="material-forms">
+            <mat-form-field>
+              <mat-select id="fieldIdM" placeholder="Select FieldId" (change)="changeFieldM($event.value)">
+                <mat-option *ngFor="let t of userFields" [value]=t.fieldId>
+                  {{t.fieldId}}
+                </mat-option>
+              </mat-select>
+              <mat-hint>Choose which password to modify</mat-hint>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput id="FieldName" type="text" placeholder="User ID" disabled>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput id="password1" type="password" placeholder="Enter New Password">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput id="password2" type="password" placeholder="Confirm New Password">
+            </mat-form-field>
+            <button mat-raised-button color="primary" (click)="modifyField()">
+              <i class="material-icons">mode_edit</i> Update</button>
+          </form>
+        </div>
+        <ng-template #noFieldsExist>
+          <div class="container text-middle">
+            <p>No Fields Exist, Please add fields first.</p>
+          </div>
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Delete Password">
+        <div class="demo-tab-content" *ngIf="fieldsExist; else noFieldsExist">
+          <form action="" class="material-forms">
+            <mat-form-field>
+              <mat-select id="fieldId" placeholder="Select FieldId" (change)="changeField($event.value)">
+                <mat-option *ngFor="let t of userFields" [value]=t.fieldId>
+                  {{t.fieldId}}
+                </mat-option>
+              </mat-select>
+              <mat-hint>Choose which password to Delete</mat-hint>
+            </mat-form-field>
+            <button mat-raised-button color="warn" (click)="deleteField()">
+              <i class="material-icons">delete</i> Delete</button>
+          </form>
+        </div>
+      </mat-tab>
+
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>

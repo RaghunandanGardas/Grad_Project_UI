@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+/* Material style Overides */
+.material-forms{
+    padding-top:20px;
+}
+.mat-form-field{
+    width:100%;
+    margin-bottom:20px;
+}
+.mat-form-checkbox{
+    width:100%;
+    display:block;
+    margin-bottom:20px;
+}

@@ -1,12 +1,32 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ msg }}!
-  </h1>
+<mat-toolbar color="primary">
+  <div class="container">
+    <h3>Password Wallet</h3>
+  </div>
+</mat-toolbar>
+  <ng-container
+    *ngIf="userLoggedIn; then loggedIn; else loggedOut">
+  </ng-container>
+  <ng-template #loggedIn>
+    <mat-toolbar>
+      <div class="container text-right">
+          <button mat-button color="primary"><i class="material-icons">subdirectory_arrow_left</i> Logout</button>
+      </div>
+    </mat-toolbar>
+  </ng-template>
+  <ng-template #loggedOut>
+    <mat-toolbar>
+      <div class="container text-right">
+          <button mat-button color="primary" routerLink="/signup" routerLinkActive="active"><i class="material-icons">account_circle</i> Sign Up</button>
+          <button mat-button color="primary" routerLink="/login" routerLinkActive="active"><i class="material-icons">open_in_new</i> Login</button>
+      </div>
+    </mat-toolbar>
+  </ng-template>  
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <router-outlet></router-outlet>    
+    </div>
+  </div>
 </div>
-<nav>
-  <a routerLink="/signup" routerLinkActive="active">SignUp</a>
-  <br>
-  <a routerLink="/login" routerLinkActive="active">Login</a>
-</nav>
-<router-outlet></router-outlet>
