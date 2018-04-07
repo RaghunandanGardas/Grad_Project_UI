@@ -1,0 +1,12 @@
+<p>
+  Login Component works!
+  
+</p>
+<h2>{{parentName}}</h2>
+<input id="textbox" type="text" value="m0KIiYHy7b4A0IoyLnF88J0+avoXibdNKkG0WH3a2qwc6D3sgTKiwEh2iUBRpw6F ">
+<br>
+<button (click)="login()">Login</button>
+<button (click)="fireEvent()">SendEvent</button>
+<h3>ERROR:{{errorMsg}}</h3>
+<p>JWT</p>
+<p *ngIf=userDetails.JWTToken>TOKEN:{{userDetails.JWTToken}}</p>
